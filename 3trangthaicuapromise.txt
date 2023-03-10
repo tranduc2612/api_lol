@@ -1,0 +1,4 @@
+3 trạng thái của Promise
+1, Pedding
+2, Fulfilled
+3, Reject 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			// Make a GET request to the TMDb API to retrieve information about a movie with an ID of 550
+			fetch(
+				"https://api.themoviedb.org/3/movie/550?api_key=0c501ef5421172db1cb804865034d648&append_to_response=videos"
+			)
+				.then((response) => response.json())
+				.then((data) => {
+					// Extract the video URL from the API response
+					let videoUrl = data.videos.results[0].key;
+
+					// Create a <video> element with the video URL as its source
+					let videoElement = document.createElement("video");
+					videoElement.width = 400;
+					videoElement.controls = true;
+
+					let sourceElement = document.createElement("source");
+					sourceElement.src =
+						"https://your-video-hosting-service.com/video/" + videoUrl;
+					sourceElement.type = "video/mp4";
+
+					videoElement.appendChild(sourceElement);
+
+					// Add the <video> element to the HTML document
+					document.body.appendChild(videoElement);
+				});
+		</script>
+	</head>
+	<body></body>
+</html>

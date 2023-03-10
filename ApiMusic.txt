@@ -1,0 +1,1 @@
+https://api.thanhlam.gq/api/getchart
